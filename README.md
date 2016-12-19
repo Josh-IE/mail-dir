@@ -13,6 +13,12 @@ This script relies on the Django framework libraries/modules
 The framework can be installed with pip
 	pip install Django
 
+# Usage
+If running on a PC
+Pull the repository into a folder on your platform.
+Run the command 'python manage.py runserver' in a command line shell from the projects folder to start the server.
+Visit http://localhost:8000 or http://127.0.0.1:8000 to access the application index page.
+
 # Database
 The sqlite database  model is created as thus:
 first_name = models.CharField(max_length=100)
