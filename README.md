@@ -21,30 +21,30 @@ email = models.EmailField(max_length=100)
     
 # Security
 XSS Prevention: 
-No html was stored in the db as the form input are validated and cleaned
+No html was stored in the db as the form input are validated and cleaned.
 The application properly escapes user-provided data before it is placed on the page.
-The Django template in use ensures expressions are HTML-escaped, and it'll automatically escape data that's dynamically inserted into the template
-The use of mark_safe and safe tags in the templats were avoided 
+The Django template in use ensures expressions are HTML-escaped, and it'll automatically escape data that's dynamically inserted into the template.
+The use of mark_safe and safe tags in the templats were avoided.
 
 Sql Injection: 
 By using Django’s querysets and(ORM) layer as against writing RawSQL queries and making extra calls, the resulting SQL were  properly escaped by the sqlite3 database driver used.
-The us of is_valid() helps to generate validated form data in its cleaned_data attribute. 
+The use of is_valid() helps to generate validated form data in its cleaned_data attribute. 
 
 CSRF: 
 The CSRF middleware is left active in the MIDDLEWARE setting.
-The CSRF module is enabled for All views (globally)
-In the template that use a POST form, csrf_tokens tag are inserted inside the <form> element 
+The CSRF module is enabled for All views (globally).
+In the template that use a POST form, csrf_tokens tag are inserted inside the <form> element .
 In the corresponding view functions of the form action pages, the RequestContext is used to render the response so that {% csrf_token %} works properly.
 The usage of render() function, protects the app since it uses RequestContext.
 
 The X-Frame-Options header is left at its default value of  SAMEORIGIN for every outgoing HttpResponse.
-This way,if the response contains the header with a value of SAMEORIGIN then the browser will only load the resource in a frame if the request originated from application.
+This way, if the response contains the header with a value of SAMEORIGIN then the browser will only load the resource in a frame if the request originated from application.
 			
-The  'django.middleware.clickjacking.XFrameOptionsMiddleware' was set in MIDDLEWARE:This sets the same X-Frame-Options value for all responses in the application
+The 'django.middleware.clickjacking.XFrameOptionsMiddleware' was set in MIDDLEWARE:This sets the same X-Frame-Options value for all responses in the application.
 
 Optional use of the package django-secure, can help to configure and check some security aspects such as ssl.
 
 #Assumptions 
-Debug is turned ON on purpose. This is to enable Django handle static files (css) for the app.  In a production scenario, the web server (Apache, Nginx) will be made to take care of that. With debug turned on, the 404 error page maks use of the default Django template
+Debug is turned ON on purpose. This is to enable Django handle static files (css) for the app.  In a production scenario, the web server (Apache, Nginx) will be made to take care of that. With debug turned on, the 404 error page maks use of the default Django template.
 Duplicate records are allowed to be inserted into the database
-The records on the list page appears in descending order
+The records on the list page appears in descending order.
