@@ -12,6 +12,12 @@ A python (Django based) application which stores names and email addresses in a 
 This script relies on the Django framework libraries/modules
 The framework can be installed with pip
 	pip install Django
+
+# Database
+The sqlite database  model is created as thus:
+first_name = models.CharField(max_length=100)
+last_name = models.CharField(max_length=100)
+email = models.EmailField(max_length=100)
     
 # Security
 XSS Prevention: 
@@ -39,5 +45,6 @@ The  'django.middleware.clickjacking.XFrameOptionsMiddleware' was set in MIDDLEW
 Optional use of the package django-secure, can help to configure and check some security aspects such as ssl.
 
 #Assumptions 
-multiple records allowed to be inserted into the database
+Debug is turned ON on purpose. This is to enable Django handle static files (css) for the app.  In a production scenario, the web server (Apache, Nginx) will be made to take care of that. With debug turned on, the 404 error page maks use of the default Django template
+Duplicate records are allowed to be inserted into the database
 The records on list page appears in descending order
