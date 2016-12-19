@@ -1,0 +1,32 @@
+{% extends 'maildir/base.html' %}
+    
+{% block content %}
+    <a href="/" class="btn btn-primary">Home </a>
+    <a href="/list" class="btn btn-primary">List </a>
+    <a href="/add" class="btn btn-primary">Add</a>
+    <h1>Contact List</h1>
+    
+    {% if users %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+			{% for user in users %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+			{% endfor %}
+        </tbody>
+        </table>
+	{% endif %}
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+.wrapper{
+    width: 640px;
+    //background-color: blueviolet;
+	display: block;
+	background-color: azure;
+	padding: 30px 40px;
+	border-radius: 4px;
+	margin: 20px auto;
+	
+}
+
+h1, .links{
+	text-align: center;
+}
+
+
+.links{
+	margin-top: 20px;
+}
+
+.links a{
+	font-size: 30px;
+}
