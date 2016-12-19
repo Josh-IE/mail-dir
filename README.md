@@ -2,11 +2,11 @@
 
 maildir
 A python (Django based) application which stores names and email addresses in a SQLite database. 
-  a) The home page (welcome page) is located at http://localhost/ 
-      - this page has links to list and add pages
-  b) List page displays all stored names / email address. located at http://localhost/list
-  c) Add page displays a form that Adds  name / email addresses to the database. Located at http://localhost/add
-      This page validates input and shows errors(if any).
+	a) The home page (welcome page) is located at http://localhost:8000/ 
+	- this page has links to list and add pages
+	b) List page displays all stored names / email address. located at http://localhost:8000/list
+	c) Add page displays a form that Adds  name / email addresses to the database. Located at http://localhost:8000/add
+	This page validates input and shows errors(if any).
 
 # Dependencies
 This script relies on the Django framework libraries/modules
@@ -47,4 +47,4 @@ Optional use of the package django-secure, can help to configure and check some 
 #Assumptions 
 Debug is turned ON on purpose. This is to enable Django handle static files (css) for the app.  In a production scenario, the web server (Apache, Nginx) will be made to take care of that. With debug turned on, the 404 error page maks use of the default Django template
 Duplicate records are allowed to be inserted into the database
-The records on list page appears in descending order
+The records on the list page appears in descending order
